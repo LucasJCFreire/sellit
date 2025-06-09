@@ -1,0 +1,29 @@
+Project sellit {
+  database_type: "PostgreSQL"
+}
+
+Table Category {
+  id          text       [pk, not null]
+  name        varchar    [not null]
+  created_at  timestamp  [default: `now()`]
+  updated_at  timestamp  [default: `now()`]
+}
+
+Table Product {
+  id              text       [pk, not null]
+  category_id     text       [not null, ref: > Category.id]
+  name            varchar    [not null]
+  description     text       [not null]
+  producer_name   varchar    [not null]
+  producer_email  varchar    [not null]
+  cover           varchar    [not null]
+  thumbnail       varchar    [not null]
+  price           decimal    [not null]
+  created_at      timestamp  [default: `now()`]
+  updated_at      timestamp  [default: `now()`]
+
+  Indexes {
+    (name)
+    (producer_name)
+  }
+}
