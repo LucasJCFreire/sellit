@@ -5,5 +5,5 @@ export const categorySchema = z.object({
 });
 
 export const categoryIdParamSchema = z.object({
-	id: z.string().length(26),
+	id: z.string().length(26, { message: 'ID da categoria deve ter exatamente 26 caracteres' }),
 });
