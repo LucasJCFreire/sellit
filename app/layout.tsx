@@ -1,9 +1,10 @@
-import type { Metadata } from "next";
-import "./globals.css";
+import type { Metadata } from 'next';
+import { ToastContainer } from 'react-toastify';
+import './globals.css';
 
 export const metadata: Metadata = {
-	title: "Sellit Challenge",
-	description: "API Rest",
+	title: 'Sellit Challenge',
+	description: 'API Rest',
 };
 
 export default function RootLayout({
@@ -13,7 +14,10 @@ export default function RootLayout({
 }>) {
 	return (
 		<html lang="en">
-			<body>{children}</body>
+			<body>
+				<ToastContainer />
+				{children}
+			</body>
 		</html>
 	);
 }
