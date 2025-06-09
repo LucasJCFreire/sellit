@@ -1,6 +1,16 @@
 'use client';
 import { useEffect } from 'react';
 
+declare global {
+	interface Window {
+		SwaggerUIBundle: (options: {
+			url?: string;
+			dom_id: string;
+			presets?: Array<() => unknown>;
+		}) => unknown;
+	}
+}
+
 export default function Home() {
 	useEffect(() => {
 		const script = document.createElement('script');
